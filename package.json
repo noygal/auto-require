@@ -1,11 +1,11 @@
 {
   "name": "managed-require",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Managed npm dependencies",
   "main": "bin/managed-require.js",
   "author": {
     "name": "Gal Noy",
-    "email": "gal@galnoy.com" 
+    "email": "gal@galnoy.com"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
