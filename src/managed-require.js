@@ -26,7 +26,7 @@ var defaults = {
   }
 };
 
-function ManagedRequire(packageName, npmiOptions) {
+function managedRequire(packageName, npmiOptions) {
   try {
     return require(packageName);
   } catch (error) {
@@ -45,5 +45,5 @@ function config(options) {
   return ManagedRequire;
 }
 
-module.exports = ManagedRequire;
+module.exports = managedRequire;
 module.exports.config = config;
