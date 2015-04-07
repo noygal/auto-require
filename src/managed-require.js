@@ -32,9 +32,11 @@ function managedRequire(packageName, npmiOptions) {
   } catch (error) {
     if (packageName.indexOf('./') !== -1) throw error;
     sync.fiber(function() {
+      // console.log('hi');
       var options = combine(npmiOptions, defaults);
       options.name = packageName;
       npmi(options);
+      // console.log('hi2');
       return require(packageName);
     });
   }
@@ -42,7 +44,7 @@ function managedRequire(packageName, npmiOptions) {
 
 function config(options) {
   defualts = combine(options, defaults);
-  return ManagedRequire;
+  return managedRequire;
 }
 
 module.exports = managedRequire;

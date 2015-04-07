@@ -1,11 +1,25 @@
 var expect = require('chai').expect;
-var mgrReq = require('./auto-require')();
 var path = require('path');
+var del = require('del');
 
-describe('Managed gulp specs', function(){
+// var testPath = path.join(__dirname, '/tests');
+// var x = require('./managed-require');
+// console.log(x('express', {path : testPath, loglevel: 'verbose'}));
+// console.log(x);
+// console.log(testPath);
+
+
+describe('Managed require specs', function(){
+  //clearing test path
+  before(function(){
+    del.sync(testPath);
+  });
+
   describe('Basic', function(){
-    it('First', function(){
-      mgr('express');
+    it('Simple call', function(){
+      require = require('./managed-require');
+      // console.log(testPath);
+      require('managed-require', {path : testPath});
     });
   });
 });
