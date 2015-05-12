@@ -27,17 +27,16 @@ var defaults = {
 };
 
 function managedRequire(packageName, npmiOptions) {
-  // console.log(packageName);
   try {
     return require(packageName);
   } catch (error) {
     if (packageName.indexOf('./') !== -1) throw error;
     sync.fiber(function() {
-      console.log('hi');
+      // console.log('hi');
       var options = combine(npmiOptions, defaults);
       options.name = packageName;
       npmi(options);
-      console.log('hi2');
+      // console.log('hi2');
       return require(packageName);
     });
   }

@@ -1,6 +1,6 @@
 {
   "name": "managed-require",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Managed npm dependencies",
   "main": "bin/managed-require.js",
   "author": {
@@ -26,6 +26,9 @@
     "gulp-mocha": "^2.0.0"
   },
   "dependencies": {
+    "async": "^0.9.0",
+    "lodash": "^3.8.0",
+    "managed-require": "0.0.2",
     "npmi": "^1.0.0",
     "synchronize": "^0.9.10"
   }
